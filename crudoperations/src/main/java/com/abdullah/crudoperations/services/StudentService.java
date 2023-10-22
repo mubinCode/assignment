@@ -21,10 +21,10 @@ public class StudentService {
         }
         return studentRepository.save(student);
     }
-    public List<Student> getStudents(List<Student> student){
-        if(student.size() > 2){
-            throw new InputMismatchException();
-        }
+    public List<Student> getStudents(){
+        // if(student.size() > 2){
+        //     throw new InputMismatchException();
+        // }
         return studentRepository.findAll();
     }
     

@@ -48,9 +48,9 @@ public class AOPTest {
     // }
     @Around(value = "logggingPointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("Join point while around invoking : " + joinPoint.getArgs()[0]);
+        log.info("Join point while around invoking : " + joinPoint.getSignature());
         if(joinPoint.proceed() instanceof Student){
-            log.info("An instance of student : ",joinPoint.getArgs()[0]);
+            log.info("An instance of student : ",joinPoint.getSignature());
         }
         return joinPoint.proceed();
 
